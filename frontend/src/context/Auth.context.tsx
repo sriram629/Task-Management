@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useState } from 'react'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI
+const BACKEND_URI = process.env.BACKEND_URI
 
 type UserType = {
   name: string
