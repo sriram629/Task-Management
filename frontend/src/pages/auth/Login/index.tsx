@@ -32,9 +32,14 @@ const Login = () => {
   ) => {
     try {
       const data = await loginUser(e.email, e.password)
-      localStorage.setItem('token', data.token)
-      toast.success((data && data.msg) || 'Login Successful')
-      navigate('/')
+
+      if (data.token) {
+        localStorage.setItem('token', data.token)
+        toast.success('Login Successful')
+        navigate('/')
+      } else {
+        throw new Error(data.error || 'Login failed: No token returned')
+      }
     } catch (error: unknown) {
       if (error instanceof Error) {
         toast.error(error.message)

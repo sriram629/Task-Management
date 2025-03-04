@@ -5,7 +5,9 @@ const cors = require('cors')
 const app = express()
 
 //midlewares
-const allowedOrigins = ['https://your-frontend-url.vercel.app']
+const allowedOrigins = [
+  'https://task-management-61zakloek-srirama-krishnas-projects.vercel.app',
+]
 
 app.use(
   cors({

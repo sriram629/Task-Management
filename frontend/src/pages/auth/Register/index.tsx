@@ -34,7 +34,7 @@ const Register = () => {
   ) => {
     try {
       const data = await registerUser(e.name, e.email, e.password)
-      toast.success((data && data.msg) || 'Register Successful')
+      toast.success((data && data.message) || 'Register Successful')
     } catch (error: unknown) {
       if (error instanceof Error) {
         toast.error(error.message)
